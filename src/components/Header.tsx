@@ -11,7 +11,7 @@ const container: Variants = {
 };
 
 const item: Variants = {
-  hidden: { opacity: 0, y: 16 },
+  hidden: { opacity: 0, y: 18 },
   show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } },
 };
 
@@ -20,22 +20,39 @@ export function Header() {
 
   return (
     <motion.header
-      className="relative overflow-hidden border-b border-border bg-accent-soft px-8 py-10 sm:px-12 sm:py-14"
+      className="relative overflow-hidden border-b border-border px-8 py-12 sm:px-12 sm:py-16"
       variants={container}
       initial={reduce ? false : "hidden"}
       animate="show"
     >
-      <span aria-hidden className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-accent/10 blur-3xl animate-blob" />
-      <span aria-hidden className="pointer-events-none absolute -bottom-32 -left-16 h-72 w-72 rounded-full bg-accent/5 blur-3xl animate-blob [animation-delay:-4s]" />
+      {/* Aurora backdrop */}
+      <span
+        aria-hidden
+        className="aurora animate-drift-a -right-20 -top-24 h-72 w-72"
+        style={{ background: "var(--grad-1)" }}
+      />
+      <span
+        aria-hidden
+        className="aurora animate-drift-b -bottom-32 left-1/4 h-80 w-80"
+        style={{ background: "var(--grad-3)" }}
+      />
+      <span
+        aria-hidden
+        className="aurora animate-drift-a -left-24 top-1/3 h-64 w-64 [animation-delay:-6s]"
+        style={{ background: "var(--grad-2)" }}
+      />
 
       <div className="relative">
         <motion.h1
           variants={item}
-          className="font-display text-4xl font-semibold leading-tight tracking-tight text-foreground sm:text-5xl"
+          className="text-gradient font-display text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl"
         >
           {resume.name}
         </motion.h1>
-        <motion.p variants={item} className="mt-2 text-lg text-accent sm:text-xl">
+        <motion.p
+          variants={item}
+          className="mt-3 text-lg font-medium text-foreground/80 sm:text-xl"
+        >
           {resume.title}
         </motion.p>
 
@@ -56,17 +73,19 @@ export function Header() {
           </a>
         </motion.div>
 
-        <motion.div variants={item} className="mt-4 flex flex-wrap gap-2">
+        <motion.div variants={item} className="mt-5 flex flex-wrap gap-2.5">
           {resume.links.map((link) => (
-            <a
+            <motion.a
               key={link.label}
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-border bg-surface px-3.5 py-1.5 text-sm font-medium text-foreground transition-all duration-200 hover:-translate-y-0.5 hover:border-accent hover:text-accent hover:shadow-sm"
+              whileHover={reduce ? undefined : { y: -3, scale: 1.04 }}
+              whileTap={reduce ? undefined : { scale: 0.97 }}
+              className="rounded-full border border-border bg-surface/70 px-4 py-1.5 text-sm font-medium text-foreground shadow-sm backdrop-blur transition-colors hover:border-accent hover:text-accent"
             >
               {link.label}
-            </a>
+            </motion.a>
           ))}
         </motion.div>
       </div>
