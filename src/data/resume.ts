@@ -31,6 +31,8 @@ export type Certification = {
   name: string;
   issuer: string;
   year: string;
+  credentialId?: string;
+  href?: string;
 };
 
 export type Volunteer = {
@@ -165,6 +167,13 @@ export const resume = {
     { name: "UX/UI Designer", issuer: "GoIT", year: "2026" },
     { name: "Foundations of User Experience Design", issuer: "Google", year: "2024" },
     { name: "Using AI Tools for UX Design", issuer: "LinkedIn", year: "2025" },
+    {
+      name: "The Fundamentals of Software Testing",
+      issuer: "QATestLab",
+      year: "Jun 2020",
+      credentialId: "353648",
+      href: "https://drive.google.com/file/d/1izh4WGo9inMlGV9n7jlLL6Hg3k1wEbhV/view",
+    },
   ] as Certification[],
   volunteer: [
     {

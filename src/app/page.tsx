@@ -176,6 +176,22 @@ export default function Home() {
                         <p className="text-xs text-muted">
                           {cert.issuer} · {cert.year}
                         </p>
+                        {(cert.credentialId || cert.href) && (
+                          <p className="mt-0.5 text-xs text-muted">
+                            {cert.credentialId && <span>ID {cert.credentialId}</span>}
+                            {cert.credentialId && cert.href && " · "}
+                            {cert.href && (
+                              <a
+                                href={cert.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="font-medium text-accent transition-colors hover:underline"
+                              >
+                                View credential
+                              </a>
+                            )}
+                          </p>
+                        )}
                       </li>
                     ))}
                   </ul>
