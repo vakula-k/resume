@@ -54,57 +54,52 @@ export const resume = {
   email: "karolina@vakula.ca",
   links: [
     { label: "Behance", href: "https://behance.net/karolina_vakula" },
-    { label: "LinkedIn", href: "https://linkedin.com/in/karolina-vakula" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/karolina-vakula-b6a77a139" },
     { label: "GitHub", href: "https://github.com/vakula-k" },
   ] as Link[],
   summary:
-    "UI/UX Designer and Full-Stack Developer early in her career, with a Computing Science background and a portfolio of consumer-facing product and UI work. Skilled in turning wireframes, user flows, and product requirements into polished, production-ready interfaces in Figma, and in building and maintaining design systems for consistency and scale. Strong visual execution and attention to detail, with a working knowledge of usability principles, interaction design, responsive layouts, and front-end basics (HTML, CSS, JavaScript). Self-driven and comfortable collaborating with product managers and engineers, iterating quickly on feedback, and adapting in fast-paced startup environments. C1-level English; fluent in English and Ukrainian.",
+    "UI/UX Designer and Full-Stack Developer with a Computing Science background and a portfolio of consumer-facing product and UI work. Skilled in turning wireframes, user flows, and product requirements into polished, production-ready interfaces in Figma, and in building and maintaining design systems for consistency and scale. Strong visual execution and attention to detail, with a working knowledge of usability principles, interaction design, responsive layouts, and front-end basics (HTML, CSS, JavaScript). Self-driven and comfortable collaborating with product managers and engineers, iterating quickly on feedback, and adapting in fast-paced startup environments. C1-level English; fluent in English and Ukrainian.",
   skills: [
     {
-      category: "Product & UX Design",
+      category: "UX & Product Design",
       items: [
         "User Research",
-        "Personas",
-        "Competitor Analysis",
         "User Flows",
         "Information Architecture",
         "Wireframing",
-        "Interaction Design",
+        "Prototyping",
         "Usability & Accessibility",
       ],
     },
     {
       category: "UI & Visual Design",
       items: [
-        "High-Fidelity Mockups",
-        "Interactive Prototyping",
-        "Responsive Web Design",
+        "High-Fidelity UI",
+        "Design Systems",
+        "Responsive Design",
         "Visual Hierarchy",
         "Typography",
-        "Design Systems & Component Libraries",
       ],
     },
     {
-      category: "Collaboration & Handoff",
-      items: [
-        "Engineering Handoff",
-        "Production-Ready UI Assets",
-        "Design Reviews",
-        "Team Syncs",
-        "Agile / Scrum (Jira)",
-      ],
+      category: "Development",
+      items: ["HTML", "CSS", "JavaScript", "Git & GitHub"],
     },
     {
-      category: "Front-End Basics",
-      items: ["HTML", "CSS", "JavaScript"],
+      category: "Tools",
+      items: ["Figma", "Adobe Creative Suite", "Sketch", "Jira", "VS Code"],
     },
     {
-      category: "AI & Workflow Tools",
+      category: "AI Tools",
       items: ["ChatGPT", "Claude", "Midjourney", "Perplexity"],
     },
     {
-      category: "Design Tools",
-      items: ["Figma", "Adobe Creative Suite", "Sketch", "VS Code", "Git / GitHub", "Jira"],
+      category: "Soft Skills",
+      items: [
+        "Cross-functional Collaboration",
+        "Communication",
+        "Adaptability",
+      ],
     },
   ] as SkillGroup[],
   projects: [
@@ -133,7 +128,7 @@ export const resume = {
     {
       role: "Visual Designer",
       org: "Messiah Lutheran Church",
-      period: "Aug 2025 – Present",
+      period: "Aug 2025 – April 2026",
       highlights: [
         "Design and maintain weekly presentation visuals, applying consistent layout, typography, and brand standards.",
         "Modernized outdated visuals, improving clarity and readability by an estimated 25% based on reduced revisions and positive feedback.",
