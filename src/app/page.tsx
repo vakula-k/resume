@@ -2,6 +2,7 @@ import { resume } from "@/data/resume";
 import { Header } from "@/components/Header";
 import { Reveal } from "@/components/Reveal";
 import { Stagger, StaggerItem } from "@/components/Stagger";
+import { SpotlightCard } from "@/components/SpotlightCard";
 
 function SectionHeading({ children }: { children: React.ReactNode }) {
   return (
@@ -31,7 +32,7 @@ export default function Home() {
       </div>
 
       <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-10 sm:px-6 sm:py-16">
-        <article className="print-page overflow-hidden rounded-3xl border border-border bg-surface/80 shadow-[0_1px_2px_rgba(15,18,34,0.04),0_24px_60px_-24px_rgba(124,58,237,0.25)] backdrop-blur-xl">
+        <article className="print-page glass shadow-card overflow-hidden rounded-3xl border border-border">
           <Header />
 
           {/* Body */}
@@ -50,10 +51,7 @@ export default function Home() {
                   <SectionHeading>Product &amp; Design Projects</SectionHeading>
                   <div className="space-y-5">
                     {resume.projects.map((project) => (
-                      <div
-                        key={project.name}
-                        className="group rounded-2xl border border-transparent p-4 transition-all duration-300 hover:-translate-y-1 hover:border-border hover:bg-surface hover:shadow-[0_16px_40px_-20px_rgba(124,58,237,0.45)]"
-                      >
+                      <SpotlightCard key={project.name} className="project-card group p-4">
                         <h3 className="font-display text-base font-semibold text-foreground transition-colors group-hover:text-accent">
                           {project.name}
                         </h3>
@@ -66,7 +64,7 @@ export default function Home() {
                             </li>
                           ))}
                         </ul>
-                      </div>
+                      </SpotlightCard>
                     ))}
                   </div>
                 </section>
@@ -139,7 +137,7 @@ export default function Home() {
                         <Stagger className="flex flex-wrap gap-1.5">
                           {group.items.map((item) => (
                             <StaggerItem key={item}>
-                              <span className="inline-block cursor-default rounded-lg bg-accent-soft px-2.5 py-1 text-xs font-medium text-accent transition-all duration-200 hover:-translate-y-0.5 hover:text-white hover:shadow-md hover:[background-image:linear-gradient(120deg,var(--grad-1),var(--grad-3))]">
+                              <span className="chip inline-block cursor-default rounded-lg px-2.5 py-1 text-xs font-medium">
                                 {item}
                               </span>
                             </StaggerItem>

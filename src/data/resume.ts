@@ -47,18 +47,18 @@ export type Language = {
 
 export const resume = {
   name: "Karolina Vakula",
-  title: "UI/UX Designer · Product Designer",
+  title: "UI/UX Designer · Full-Stack Developer",
   location: "Calgary, AB",
-  relocation: "Open to relocating to Vancouver, BC",
+  relocation: "Open to relocate",
   phone: "+1 403 397 5814",
-  email: "karolinavakula@gmail.com",
+  email: "karolina@vakula.ca",
   links: [
     { label: "Behance", href: "https://behance.net/karolina_vakula" },
     { label: "LinkedIn", href: "https://linkedin.com/in/karolina-vakula" },
     { label: "GitHub", href: "https://github.com/vakula-k" },
   ] as Link[],
   summary:
-    "UI/UX and Product Designer early in her career, with a Computing Science background and a portfolio of consumer-facing product and UI work. Skilled in turning wireframes, user flows, and product requirements into polished, production-ready interfaces in Figma, and in building and maintaining design systems for consistency and scale. Strong visual execution and attention to detail, with a working knowledge of usability principles, interaction design, responsive layouts, and front-end basics (HTML, CSS, JavaScript). Self-driven and comfortable collaborating with product managers and engineers, iterating quickly on feedback, and adapting in fast-paced startup environments. C1-level English; fluent in English and Ukrainian.",
+    "UI/UX Designer and Full-Stack Developer early in her career, with a Computing Science background and a portfolio of consumer-facing product and UI work. Skilled in turning wireframes, user flows, and product requirements into polished, production-ready interfaces in Figma, and in building and maintaining design systems for consistency and scale. Strong visual execution and attention to detail, with a working knowledge of usability principles, interaction design, responsive layouts, and front-end basics (HTML, CSS, JavaScript). Self-driven and comfortable collaborating with product managers and engineers, iterating quickly on feedback, and adapting in fast-paced startup environments. C1-level English; fluent in English and Ukrainian.",
   skills: [
     {
       category: "Product & UX Design",
@@ -153,7 +153,7 @@ export const resume = {
     {
       credential: "Bachelor of Science, Computing Science and Mathematics",
       institution: "University of Alberta",
-      detail: "In Progress",
+      detail: "Expected 2027",
     },
     {
       credential: "UX/UI Design Program",

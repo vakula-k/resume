@@ -1,21 +1,49 @@
 @import "tailwindcss";
 
+/* Class-based dark mode (driven by the no-FOUC script in layout.tsx) */
+@custom-variant dark (&:where(.dark, .dark *));
+
 :root {
-  --background: #f6f5fb;
+  --background: #f4f5fb;
   --surface: #ffffff;
-  --foreground: #0f1222;
-  --muted: #595f73;
-  --border: #e8e7f2;
-  --accent: #7c3aed;
-  --accent-soft: #f2ecfe;
-  --grad-1: #6366f1;
-  --grad-2: #a855f7;
+  --surface-2: #f8f9ff;
+  --foreground: #0c0f1d;
+  --muted: #565d72;
+  --border: #e7e8f3;
+  --accent: #6d4aff;
+  --accent-soft: #efeafe;
+  --grad-1: #4f7cff;
+  --grad-2: #8b5cf6;
   --grad-3: #ec4899;
+  /* accent as rgb channels, for translucent glows/rings */
+  --glow: 109, 74, 255;
+  --shadow-card: 0 1px 2px rgba(12, 15, 29, 0.04), 0 24px 60px -28px rgba(var(--glow), 0.28);
+  --shadow-soft: 0 1px 2px rgba(12, 15, 29, 0.05);
+  --grain-opacity: 0.035;
+}
+
+.dark {
+  --background: #07080f;
+  --surface: #10121f;
+  --surface-2: #161829;
+  --foreground: #eef0f8;
+  --muted: #9aa2bd;
+  --border: #232742;
+  --accent: #a78bfa;
+  --accent-soft: #1c1733;
+  --grad-1: #6691ff;
+  --grad-2: #a78bfa;
+  --grad-3: #f472b6;
+  --glow: 139, 110, 246;
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.5), 0 30px 80px -32px rgba(var(--glow), 0.5);
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --grain-opacity: 0.05;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-border: var(--border);
@@ -33,9 +61,29 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
+  transition: background-color 0.45s ease, color 0.45s ease;
 }
 
-/* Gradient text */
+::selection {
+  background: color-mix(in oklab, var(--accent) 26%, transparent);
+}
+
+/* Themed shadows */
+.shadow-card {
+  box-shadow: var(--shadow-card);
+}
+.shadow-soft {
+  box-shadow: var(--shadow-soft);
+}
+
+/* Frosted glass surface */
+.glass {
+  background: color-mix(in oklab, var(--surface) 80%, transparent);
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+}
+
+/* Animated gradient text */
 .text-gradient {
   background-image: linear-gradient(
     100deg,
@@ -49,7 +97,7 @@ body {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  animation: shimmer 6s linear infinite;
+  animation: shimmer 7s linear infinite;
 }
 
 @keyframes shimmer {
@@ -58,12 +106,17 @@ body {
   }
 }
 
+/* Solid gradient fill (bars, dots, progress) */
+.gradient-accent {
+  background-image: linear-gradient(120deg, var(--grad-1), var(--grad-2), var(--grad-3));
+}
+
 /* Aurora background blobs */
 .aurora {
   position: absolute;
   border-radius: 9999px;
-  filter: blur(64px);
-  opacity: 0.55;
+  filter: blur(72px);
+  opacity: 0.4;
   will-change: transform;
 }
 
@@ -98,9 +151,67 @@ body {
   animation: drift-b 20s ease-in-out infinite;
 }
 
-/* Animated gradient bar / borders */
-.gradient-accent {
-  background-image: linear-gradient(120deg, var(--grad-1), var(--grad-2), var(--grad-3));
+/* Pointer-tracking spotlight (Linear / Vercel style) */
+.spotlight {
+  position: relative;
+  isolation: isolate;
+}
+.spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    240px circle at var(--mx, 50%) var(--my, 0%),
+    rgba(var(--glow), 0.16),
+    transparent 72%
+  );
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+.spotlight:hover::before {
+  opacity: 1;
+}
+
+/* Project card hover treatment */
+.project-card {
+  border: 1px solid transparent;
+  border-radius: 1rem;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+.project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+}
+
+/* Skill chip */
+.chip {
+  background: var(--accent-soft);
+  color: var(--accent);
+  transition: transform 0.2s ease, color 0.2s ease, box-shadow 0.2s ease,
+    background-image 0.2s ease;
+}
+.chip:hover {
+  transform: translateY(-2px);
+  color: #fff;
+  background-image: linear-gradient(120deg, var(--grad-1), var(--grad-3));
+  box-shadow: 0 8px 20px -8px rgba(var(--glow), 0.6);
+}
+
+/* Film-grain overlay */
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+  opacity: var(--grain-opacity);
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -112,11 +223,24 @@ body {
   .animate-drift-b {
     animation: none;
   }
+  .project-card,
+  .chip,
+  .spotlight::before {
+    transition: none;
+  }
 }
 
 @media print {
-  :root {
+  /* Force a clean light layout for print, even in dark mode */
+  :root,
+  .dark {
     --background: #ffffff;
+    --surface: #ffffff;
+    --surface-2: #ffffff;
+    --foreground: #000000;
+    --muted: #333333;
+    --border: #dddddd;
+    --accent: #5b21b6;
     --accent-soft: #ffffff;
   }
 
@@ -130,7 +254,9 @@ body {
   }
 
   .no-print,
-  .aurora {
+  .aurora,
+  .grain,
+  .spotlight::before {
     display: none !important;
   }
 
