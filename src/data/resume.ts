@@ -25,6 +25,7 @@ export type Education = {
   credential: string;
   institution: string;
   detail: string;
+  href?: string;
 };
 
 export type Certification = {
@@ -156,6 +157,7 @@ export const resume = {
       credential: "UX/UI Design Program",
       institution: "GoIT School",
       detail: "2026",
+      href: "https://drive.google.com/file/d/16o07h5ZLSAp4l-RC4mcIwZ4EI6JzQyen/view",
     },
     {
       credential: "Bachelor of Arts, International Relations",
@@ -164,9 +166,19 @@ export const resume = {
     },
   ] as Education[],
   certifications: [
-    { name: "UX/UI Designer", issuer: "GoIT", year: "2026" },
-    { name: "Foundations of User Experience Design", issuer: "Google", year: "2024" },
-    { name: "Using AI Tools for UX Design", issuer: "LinkedIn", year: "2025" },
+    {
+      name: "Foundations of User Experience (UX) Design",
+      issuer: "Google",
+      year: "Feb 2024",
+      credentialId: "XA24C6JQCJ52",
+      href: "https://drive.google.com/file/d/1j2EqtPYlfiMHGpCygTP52Xm5PR25ZcKL/view",
+    },
+    {
+      name: "Using AI Tools for UX Design",
+      issuer: "LinkedIn",
+      year: "Feb 2025",
+      href: "https://www.linkedin.com/learning/certificates/d6b402d1ad2fd4cefad839ba9d879a513bd4cc6136b7d352e99b17e1cb72a2c5",
+    },
     {
       name: "The Fundamentals of Software Testing",
       issuer: "QATestLab",

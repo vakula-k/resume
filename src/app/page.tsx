@@ -160,6 +160,16 @@ export default function Home() {
                         </h3>
                         <p className="text-sm text-muted">{edu.institution}</p>
                         <p className="text-xs font-medium text-accent">{edu.detail}</p>
+                        {edu.href && (
+                          <a
+                            href={edu.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-0.5 inline-block text-xs font-medium text-accent hover:underline"
+                          >
+                            View credential
+                          </a>
+                        )}
                       </div>
                     ))}
                   </div>
