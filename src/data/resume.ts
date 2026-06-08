@@ -11,6 +11,7 @@ export type SkillGroup = {
 export type Project = {
   name: string;
   tagline: string;
+  year: string;
   href?: string;
   highlights: string[];
 };
@@ -110,6 +111,7 @@ export const resume = {
     {
       name: "AI Ordering Assistant",
       tagline: "GoIT AI Solutions Hackathon 2026",
+      year: "2026",
       href: "https://solution-front-one.vercel.app",
       highlights: [
         "Pitched the original concept for a conversational assistant that helps restaurant customers decide what to order based on cravings, dietary needs, and allergies.",
@@ -120,6 +122,7 @@ export const resume = {
     {
       name: "Personal Portfolio Website",
       tagline: "Design and front-end build",
+      year: "2026",
       href: "https://karolina.vakula.ca",
       highlights: [
         "Designed and built a responsive personal website from scratch, owning the layout, typography, and visual hierarchy along with the front-end code.",
@@ -129,6 +132,7 @@ export const resume = {
     {
       name: "GrowDaily",
       tagline: "Product/UI Design Case Study — Goal-Tracking Consumer App",
+      year: "2026",
       highlights: [
         "Translated product requirements and user research into user flows, wireframes, and information architecture for a consumer-facing mobile product.",
         "Designed high-fidelity mockups and interactive prototypes in Figma, iterating on layout, visual hierarchy, and interaction details.",
@@ -140,6 +144,7 @@ export const resume = {
     {
       name: "Carolina Cafe & Catering",
       tagline: "Responsive Website Redesign Case Study",
+      year: "2025",
       highlights: [
         "Performed competitive analysis and defined redesign goals for a consumer-facing web experience.",
         "Designed responsive UI across mobile, tablet, and desktop, improving navigation, visual hierarchy, and readability.",

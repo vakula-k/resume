@@ -52,9 +52,12 @@ export default function Home() {
                   <div className="space-y-5">
                     {resume.projects.map((project) => (
                       <SpotlightCard key={project.name} className="project-card group p-4">
-                        <h3 className="font-display text-base font-semibold text-foreground transition-colors group-hover:text-accent">
-                          {project.name}
-                        </h3>
+                        <div className="flex flex-wrap items-baseline justify-between gap-x-4">
+                          <h3 className="font-display text-base font-semibold text-foreground transition-colors group-hover:text-accent">
+                            {project.name}
+                          </h3>
+                          <span className="text-sm tabular-nums text-muted">{project.year}</span>
+                        </div>
                         <p className="mt-0.5 text-sm italic text-muted">{project.tagline}</p>
                         {project.href && (
                           <a
