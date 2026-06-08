@@ -110,7 +110,7 @@ export const resume = {
   projects: [
     {
       name: "AI Ordering Assistant",
-      tagline: "GoIT AI Solutions Hackathon 2026",
+      tagline: "GoIT AI Solutions Hackathon",
       year: "2026",
       href: "https://solution-front-one.vercel.app",
       highlights: [
