@@ -207,20 +207,6 @@ export default function Home() {
                   </ul>
                 </section>
               </Reveal>
-
-              <Reveal delay={0.25}>
-                <section>
-                  <SidebarHeading>Languages</SidebarHeading>
-                  <ul className="space-y-2">
-                    {resume.languages.map((lang) => (
-                      <li key={lang.name} className="flex items-baseline justify-between gap-2 text-sm">
-                        <span className="font-medium text-foreground">{lang.name}</span>
-                        <span className="text-muted">{lang.level}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </section>
-              </Reveal>
             </aside>
           </div>
         </article>

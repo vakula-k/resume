@@ -61,7 +61,7 @@ export const resume = {
     { label: "GitHub", href: "https://github.com/vakula-k" },
   ] as Link[],
   summary:
-    "UI/UX Designer and Web Developer with a Computing Science background and a portfolio of consumer-facing product and UI work. Skilled in turning wireframes, user flows, and product requirements into polished, production-ready interfaces in Figma, and in building and maintaining design systems for consistency and scale. Strong visual execution and attention to detail, with a working knowledge of usability principles, interaction design, responsive layouts, and front-end basics (HTML, CSS, JavaScript). Self-driven and comfortable collaborating with product managers and engineers, iterating quickly on feedback, and adapting in fast-paced startup environments. C1-level English; fluent in English and Ukrainian.",
+    "UI/UX Designer and Web Developer with a Computing Science background and a portfolio of consumer-facing product and UI work. Skilled in turning wireframes, user flows, and product requirements into polished, production-ready interfaces in Figma, and in building and maintaining design systems for consistency and scale. Strong visual execution and attention to detail, with a working knowledge of usability principles, interaction design, responsive layouts, and front-end basics (HTML, CSS, JavaScript). Self-driven and comfortable collaborating with product managers and engineers, iterating quickly on feedback, and adapting in fast-paced startup environments.",
   skills: [
     {
       category: "UX & Product Design",
@@ -197,8 +197,4 @@ export const resume = {
       ],
     },
   ] as Volunteer[],
-  languages: [
-    { name: "English", level: "Fluent (C1+)" },
-    { name: "Ukrainian", level: "Native" },
-  ] as Language[],
 };
