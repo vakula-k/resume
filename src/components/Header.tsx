@@ -107,30 +107,26 @@ export function Header() {
           </motion.div>
         </div>
 
-        {/* Portrait — framed and glowing so it reads as part of the composition */}
+        {/* Portrait — background removed so the figure sits within the design, grounded by a soft glow */}
         <motion.div
           variants={item}
-          whileHover={reduce ? undefined : { scale: 1.02, y: -4 }}
+          whileHover={reduce ? undefined : { y: -5 }}
           transition={{ type: "spring", stiffness: 300, damping: 20 }}
           className="relative mx-auto shrink-0 lg:mx-0"
         >
           <span
             aria-hidden
-            className="absolute -inset-4 -z-10 rounded-[2.2rem] opacity-70 blur-2xl"
-            style={{ background: "linear-gradient(140deg, var(--grad-1), var(--grad-3))" }}
+            className="absolute left-1/2 top-1/2 -z-10 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-55 blur-3xl"
+            style={{ background: "radial-gradient(circle, var(--grad-2), var(--grad-3) 45%, transparent 72%)" }}
           />
-          <div className="gradient-accent rounded-[1.7rem] p-[3px] shadow-card">
-            <div className="overflow-hidden rounded-[1.55rem] bg-surface-2">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/portrait.jpg"
-                alt={resume.name}
-                width={228}
-                height={285}
-                className="block h-[260px] w-[208px] object-cover object-top sm:h-[288px] sm:w-[230px]"
-              />
-            </div>
-          </div>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/portrait.webp"
+            alt={resume.name}
+            width={532}
+            height={900}
+            className="relative block h-[340px] w-auto object-contain drop-shadow-[0_18px_38px_rgba(0,0,0,0.5)] sm:h-[400px] lg:h-[440px]"
+          />
         </motion.div>
       </div>
     </motion.header>
