@@ -119,8 +119,8 @@ export function Header() {
             <img
               src="/portrait.webp"
               alt={resume.name}
-              width={644}
-              height={1100}
+              width={532}
+              height={900}
               className="relative block h-[380px] w-auto object-contain drop-shadow-[0_18px_38px_rgba(0,0,0,0.5)] sm:h-[440px] lg:h-[500px]"
             />
           </motion.div>
