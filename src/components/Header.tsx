@@ -48,9 +48,9 @@ export function Header() {
         <ThemeToggle />
       </motion.div>
 
-      <div className="relative flex flex-col gap-9 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
+      <div className="relative flex flex-col gap-9 lg:flex-row lg:items-end lg:gap-8">
         {/* Text column */}
-        <div className="min-w-0">
+        <div className="min-w-0 lg:self-center">
           <motion.span
             variants={item}
             className="inline-flex items-center gap-2 rounded-full border border-border bg-surface-2/70 px-3 py-1 text-xs font-medium text-muted backdrop-blur"
@@ -107,27 +107,24 @@ export function Header() {
           </motion.div>
         </div>
 
-        {/* Portrait — background removed so the figure sits within the design, grounded by a soft glow */}
-        <motion.div
-          variants={item}
-          whileHover={reduce ? undefined : { y: -5 }}
-          transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          className="relative mx-auto shrink-0 lg:mx-0"
-        >
-          <span
-            aria-hidden
-            className="absolute left-1/2 top-1/2 -z-10 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-55 blur-3xl"
-            style={{ background: "radial-gradient(circle, var(--grad-2), var(--grad-3) 45%, transparent 72%)" }}
-          />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="/portrait.webp"
-            alt={resume.name}
-            width={532}
-            height={900}
-            className="relative block h-[340px] w-auto object-contain drop-shadow-[0_18px_38px_rgba(0,0,0,0.5)] sm:h-[400px] lg:h-[440px]"
-          />
-        </motion.div>
+        {/* Portrait — background removed, centered in the space beside the text and flush to the header base */}
+        <div className="flex justify-center lg:flex-1">
+          <motion.div variants={item} className="relative shrink-0 lg:-mb-14">
+            <span
+              aria-hidden
+              className="absolute left-1/2 top-[42%] -z-10 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full opacity-55 blur-3xl"
+              style={{ background: "radial-gradient(circle, var(--grad-2), var(--grad-3) 45%, transparent 72%)" }}
+            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/portrait.webp"
+              alt={resume.name}
+              width={644}
+              height={1100}
+              className="relative block h-[380px] w-auto object-contain drop-shadow-[0_18px_38px_rgba(0,0,0,0.5)] sm:h-[440px] lg:h-[500px]"
+            />
+          </motion.div>
+        </div>
       </div>
     </motion.header>
   );
