@@ -56,6 +56,16 @@ export default function Home() {
                           {project.name}
                         </h3>
                         <p className="mt-0.5 text-sm italic text-muted">{project.tagline}</p>
+                        {project.href && (
+                          <a
+                            href={project.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-1 inline-block text-xs font-medium text-accent hover:underline"
+                          >
+                            {project.href.replace(/^https?:\/\//, "")} ↗
+                          </a>
+                        )}
                         <ul className="mt-3 space-y-2">
                           {project.highlights.map((h, i) => (
                             <li key={i} className="flex gap-2.5 text-[15px] leading-relaxed text-muted">

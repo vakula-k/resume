@@ -11,6 +11,7 @@ export type SkillGroup = {
 export type Project = {
   name: string;
   tagline: string;
+  href?: string;
   highlights: string[];
 };
 
@@ -106,6 +107,25 @@ export const resume = {
     },
   ] as SkillGroup[],
   projects: [
+    {
+      name: "AI Ordering Assistant",
+      tagline: "GoIT AI Solutions Hackathon 2026",
+      href: "https://solution-front-one.vercel.app",
+      highlights: [
+        "Pitched the original concept for a conversational assistant that helps restaurant customers decide what to order based on cravings, dietary needs, and allergies.",
+        "Led the UX and UI as a cross-functional team of GoIT graduates built it into a live, deployed product over a two-week sprint.",
+        "Designed the conversation flow and interface to lift average order value through tactful suggestions, free up servers, and reduce risk through reliable allergy handling.",
+      ],
+    },
+    {
+      name: "Personal Portfolio Website",
+      tagline: "Design and front-end build",
+      href: "https://karolina.vakula.ca",
+      highlights: [
+        "Designed and built a responsive personal website from scratch, owning the layout, typography, and visual hierarchy along with the front-end code.",
+        "Deployed and maintain the live site with version control on GitHub.",
+      ],
+    },
     {
       name: "GrowDaily",
       tagline: "Product/UI Design Case Study — Goal-Tracking Consumer App",
